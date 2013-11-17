@@ -1,8 +1,5 @@
 # exploit-exercises - fusion - level03
 # exploit by @vnico
-# current status:
-# partial collision hash: OK
-# EIP: OK 
 # http://vnico.mundodisco.net
 import socket
 from struct import pack
